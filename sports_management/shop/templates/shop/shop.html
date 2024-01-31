@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+	<center>
+		<h1 >SHOP DETAILS</h1>
+		<form>
+			<table border="1">
+				<tr>
+					<td>SHOP NAME</td>
+					<td>ADDRESS</td>
+					<td>MOB NO</td>
+					<td>Status</td>
+				</tr>
+                {% for i in s %}
+                <tr>
+                <td>{{ i.shop_name }}</td>
+                <td>{{ i.address }}</td>
+                <td>{{ i.mob_no }}</td>
+                <td>{{ i.status }}</td>
+                </tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>

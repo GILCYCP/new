@@ -1,0 +1,29 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+</head>
+<body style="background-color: #1C1E32">
+	<center>
+    <br>
+		<h1 style="color: darkorange">PLACE YOUR ORDER HERE </h1>
+		<form>
+		<br>
+			<table border="2">
+			<tr>
+				<td><center>ITEM NAME</center></td>
+                <td><center>IMAGE</center></td>
+                <td><center>AMOUNT</center></td>
+                <td><center>MAKE YOUR ORDERS</center></td>
+ <tr>
+                {% for i in pp %}
+                <td><center>{{ i.item_name}}</center></td>
+                    <td><center><img src="/static/{{ i.image}}" width="250" height="250"></center></td>
+                    <td align="center">{{ i.amount }}</td>
+                    <td align="center"><a href="{% url 'pp' idd=i.item_id %}">Order</a> </td>
+            </tr>
+            {% endfor %}
+			</table>
+        </form>
+	</body>
+</center>
+</html>
+{% endblock %}

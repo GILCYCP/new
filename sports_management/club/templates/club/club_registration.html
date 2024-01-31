@@ -1,0 +1,65 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+<html>
+<head>
+</head>
+<body>
+	<center>
+		<h1 style="color: darkorange">CLUB MANAGER</h1>
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<table>
+                <tr>
+					<td>NAME</td>
+					<td><input type="text" name="name" required=""></td>
+				</tr>
+                <tr>
+                    <td>ADDRESS</td>
+                    <td><input type="text" name="text" required=""></td>
+                </tr>
+				<tr>
+					<td>EMAIL</td>
+					<td><input type="email" name="file" required="[a-z0-9._%+-]+@[gmail]+\.[com]{3}$"></td>
+				</tr>
+                <tr>
+                    <td>fees/hr</td>
+                    <td><input type="text" name="fees"></td>
+                </tr>
+                <tr>
+                    <td>more informations</td>
+                    <td><input type="text" name="more"></td>
+                </tr>
+                <tr>
+                    <td>image</td>
+                    <td><input type="file" name="pic"></td>
+                </tr>
+                <tr>
+                    <td>fecilities</td>
+                    <td><input type="text" name="fec"></td>
+                </tr>
+                <tr>
+					<td>PASSWORD</td>
+					<td><input type="password" name="password" minlength="8" maxlength="20" pattern="(?=.*[#@])(?=.*\d)(?=.*[a-z])(?=.*[4,}" required style="..."></td>
+				</tr>
+				<tr>
+					<td>MOB NO</td>
+					<td><input type="phone" name="number" minlength="10" maxlength="10" pattern="[0-9]{10}" required="">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit"></td>
+				</tr>
+			</table>
+            {% if msg %}
+                <script>
+                    alert('successfully registerd')
+                </script>
+            {% endif %}
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}
+

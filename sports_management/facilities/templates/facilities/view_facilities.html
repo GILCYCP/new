@@ -1,0 +1,25 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head>
+</head>
+<center>
+	<h1>FACILITIES</h1>
+	<body>
+		<table border="1">
+			<tr>
+				<th>EQUIPMENTS</th>
+                <th>SPECIAL FEATURES </th>
+			</tr>
+            {% for i in f %}
+            <tr>
+				<th>{{ i.equipments }}</th>
+				<th>{{ i.special_features }}</th>
+			</tr>
+            {% endfor %}
+
+			</table>
+	</body>
+</center>
+</html>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'temp/club manage.html' %}
+{% block base %}
+<html>
+<head>
+	</head>
+	<center>
+		<h1 style="color: darkorange">MANAGE BOOKING</h1>
+		<body style="background-color: #1d1f32">
+			<table border="1">
+				<tr>
+                    <th><center>USER NAMAE</center></th>
+					<th><center>FROM TIME</center></th>
+					<th><center>TO TIME</center></th>
+{#					<th>TIME</th>#}
+                    <th><center>DATE</center></th>
+{#                    <th>Amount</th>#}
+                    <th><center>STATUS</center></th>
+
+				</tr>
+                {% for i in b %}
+                <tr>
+                <td><center>{{ i.user.user_name }}</center></td>
+                <td><center>{{ i.from_time }}</center></td>
+                <td><center>{{ i.to_time }}</center></td>
+                <td><center>{{ i.date }}</center></td>
+                    <td><center>{{ i.status }}</center></td>
+{#                    <td>{{ p. }}</td>#}
+                <td><center><a href="{% url 'bkg' idd=i.booking_id%}">Approve</a></center></td>
+                <td><center><a href="{% url 'rt' idd=i.booking_id%}">Reject</a></center></td>
+                </tr>
+                {% endfor %}
+			</table>
+		</body>
+	</center>
+	</html>
+{% endblock %}

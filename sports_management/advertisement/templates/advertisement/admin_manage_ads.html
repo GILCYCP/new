@@ -1,0 +1,33 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+<head>
+	</head>
+	<center>
+    <br>
+		<h1 style="color: darkorange">MANAGE ADVERTISEMENT</h1>
+		<body style="background-color: #1C1E32">
+        <br>
+			<table border="1" class="table table-striped">
+				<tr>
+                    <th><center>INFORMATIONS></center></th>
+				<th><center>IMAGE</center></th>
+				<th><center>CONTACT NUMBER</center></th>
+				<th><center>STATUS</center></th>
+			</tr>
+                {% for i in z %}
+			<tr>
+				<td><center>{{ i.product_name }}</center></td>
+                <td><center><img src="/static/{{ i.product_image}}" width="250" height="250"></center></td>
+                <td><center>{{ i.contact_number }}</center></td>
+                <td><center>{{ i.status }}</center></td>
+                <td><center><a href="{% url 'aprl' idd=i.ads_id %}">Approve</a></center></td>
+                <td><center><a href="{% url 'rejt' idd=i.ads_id %}">Reject</a></center></td>
+{#				<td>{{ i. }}</td>#}
+			</tr>
+                {% endfor %}
+			</table>
+		</body>
+	</center>
+	</html>
+{% endblock %}

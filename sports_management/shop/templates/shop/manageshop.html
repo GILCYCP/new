@@ -1,0 +1,35 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+<head>
+</head>
+<body style="background-color: #1C1E32">
+	<center>
+    <br>
+		<h1 style="color: darkorange">SHOP DETAILS</h1>
+		<form>
+        <br>
+			<table border="1" class="table table-striped">
+				<tr>
+					<td><center>SHOP NAME</center></td>
+					<td><center>ADDRESS</center></td>
+					<td><center>MOB NO</center></td>
+                    <td><center>STATUS</center></td>
+				</tr>
+                {% for i in k %}
+                <tr>
+                    <td><center>{{ i.shop_name }}</center></td>
+                    <td><center>{{ i.address }}</center></td>
+                    <td><center>{{ i.mob_no }}</center></td>
+                    <td><center>{{ i.status }}</center></td>
+                    <td><center><a href="{% url 'apr' idd=i.shop_id %}">Approve</a></center></td>
+                <td><center><a href="{% url 'rej' idd=i.shop_id%}">Reject</a></center></td>
+                </tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+<html>
+<head>
+</head>
+<body>
+	<center>
+	<h1 style="color: darkorange">SHOP OWNERS</h1>
+<form method="post">
+    {% csrf_token %}
+	<table>
+		<tr>
+			<td>SHOP NAME</td>
+			<td><input type="text" name="name" required=""></td>
+			</tr>
+
+			<tr>
+				<td>ADDRESS</td>
+		<td><input type="text" name="address" required=""></td>
+			</tr>
+
+			<tr>
+				<td>PASSWORD</td>
+				<td><input type="password" name="password" minlength="8" maxlength="20" pattern="(?=.*[#@])(?=.*\d)(?=.*[a-z])(?=.*[4,}" required style="..."></td>
+			</tr>
+
+			<tr>
+				<td>MOB NO</td>
+				<td><input type="phone" name="num" minlength="10" maxlength="10" pattern="[0-9]{10}" required=""></td>
+			</tr>
+
+
+			<tr>
+               <td></td>
+				<td><input type="SUBMIT" name="ok" value="SUBMIT"></td>
+			</tr>
+		</table>
+    {% if msg %}
+        <script>
+            alert('successfully registerd')
+        </script>
+    {% endif %}
+	</FORM>
+</center>
+</body>
+</html>
+{% endblock %}

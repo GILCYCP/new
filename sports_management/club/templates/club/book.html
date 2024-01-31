@@ -1,0 +1,44 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+
+<html>
+<head>
+</head>
+
+<center>
+	<body style="background-color: #1C1E32">
+    <br>
+	<h1 style="color: darkorange">CLUB OWNERS</h1>
+    <br>
+	<table border="1" class="table table-striped">
+		<tr>
+			<th><center>NAME</center></th>
+            <th>IMAGE</th>
+			<th><center>ADDRESS</center></th>
+			<th><center>EMAIL</center></th>
+            <th><center>MOB NO</center></th>
+            <th><center>FEES</center></th>
+
+            <th>FECILITIES</th>
+            <th>MORE INFORMATIONS</th>
+		</tr>
+		<tr>
+            {% for i in c %}
+			<td><center>{{ i.club_name }}</center></td>
+                <td align="center"><img src="/static/{{ i.img}}" width="250" height="250"></td>
+			<td><center>{{ i.address }}</center></td>
+			<td><center>{{ i.email }}</center></td>
+                <td><center>{{ i.phone }}</center></td>
+                <td><center>{{ i.fees }}</center></td>
+                <td><center>{{ i.facilities }}</center></td>
+                <td><center>{{ i.more_information }}</center></td>
+
+
+                <td><a href="/club/bk/{{ i.club_id }}">BOOK</a> </td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

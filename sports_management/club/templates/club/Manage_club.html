@@ -1,0 +1,43 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+<html>
+<head>
+</head>
+
+<center>
+	<body style="background-color: #1C1E32">
+    <br>
+	<h1 style="color: darkorange">CLUB OWNERS</h1>
+    <br>
+	<table border="1" class="table table-striped">
+		<tr>
+			<th><center>NAME</center></th>
+			<th><center>ADDRESS</center></th>
+			<th><center>EMAIL</center></th>
+            <th><center>MOB NO</center></th>
+            <th><center>STATUS</center></th>
+{#            <th>PASSWORD</th>#}
+
+{#            <th>OTP</th>#}
+		</tr>
+		<tr>
+            {% for i in c %}
+			<td><center>{{ i.club_name }}</center></td>
+			<td><center>{{ i.address }}</center></td>
+			<td><center>{{ i.email }}</center></td>
+                <td><center>{{ i.phone }}</center></td>
+                <td><center>{{ i.status }}</center></td>
+                <td><center>{{ i.location }}</center></td>
+{#			<td>{{ i.password }}</td>#}
+
+                <td><center><a href="{% url 'ap' idd=i.club_id %}">Approve</a></center></td>
+                <td><center><a href="{% url 're' idd=i.club_id %}">Reject</a></center></td>
+{#            <td>{{ i. }}</td>#}
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

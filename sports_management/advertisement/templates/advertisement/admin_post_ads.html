@@ -1,0 +1,37 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+<head>
+</head>
+<body style="background-color: #1C1E32">
+	<center>
+        <br>
+		<h1 style="color: darkorange">POST ADVERTISEMENT</h1>
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<br>
+            <table>
+                <tr>
+					<td>INFORMATIONS</td>
+					<td><input type="text" name="name" required=""></td>
+				</tr>
+                <tr>
+                    <td>IMAGE</td>
+					<td><input type="file" name="adminimage" required=""></td>
+				</tr>
+				<tr>
+					<td>contact no</td>
+					<td><input type="text" name="contact" minlength="10" maxlength="10" pattern="[0-9]{10}" required="">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit"></td>
+				</tr>
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>
+ {% endblock %}

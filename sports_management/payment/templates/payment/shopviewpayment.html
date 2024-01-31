@@ -1,0 +1,32 @@
+{% extends 'temp/shop.html' %}
+{% block base %}
+<html>
+<head>
+</head>
+<center>
+	<h1 style="color: darkorange">VIEW PAYMENT</h1>
+	<body style="background-color: #1C1E32">
+		<table border="1">
+			<tr>
+                <th><center>USER NAME</center></th>
+				<th><center>AMOUNT</center></th>
+				<th><center>ACCOUNT NUMBER</center></th>
+				<th><center>IFSC CODE</center></th>
+{#				<th><center>STATUS</center></th>#}
+			</tr>
+            <tr>
+                {% for i in sp %}
+                    <td><center>{{ i.user.user_name}}</center></td>
+                <td><center>{{ i.amount}}</center></td>
+                <td><center>{{ i.account_number}}</center></td>
+                    <td><center>{{ i.ifsc_code }}</center></td>
+{#                <td><center><center>{{ i.status }}</center></td>#}
+{#                     <td><center><a href="{% url 'jj' idd=i.payment_id%}">paid</a></center></td>#}
+{#                    <td><center><a href="{% url 'mm' idd=i.payment_id%}">not paid</a> </center></td>#}
+            </tr>
+            {% endfor %}
+			</table>
+	</body>
+</center>
+</html>
+{% endblock %}

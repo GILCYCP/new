@@ -1,0 +1,33 @@
+{% extends 'temp/shop.html' %}
+{% block base %}
+<html>
+<head>
+
+</head>
+<body style="background-color: #1C1E32">
+	<center>
+		<h1 style="color: darkorange"> MANAGE ORDER </h1>
+		<form>
+			<table border="2">
+			<tr>
+                <td><center>USER</center></td>
+                <td><center>ITEM</center></td>
+                <td><center>IMAGE</center></td>
+                <td><center>AMOUNT</center></td>
+                <td><center>STATUS</center></td>
+ <tr>
+                {% for i in o %}
+                    <td><center>{{ i.user.user_name}}</center></td>
+                    <td><center>{{ i.sportsitem_name}}</center></td>
+                    <td><center><img src="/static/{{ i.image}}" width="250" height="250"></center></td>
+                    <td><center>{{ i.amount }}</center></td>
+                    <td><center>{{ i.status }}</center></td>
+                    <td><center><a href="{% url 'vv' idd=i.order_id %}">Approve</a></center></td>
+                    <td><center><a href="{% url 'cc' idd=i.order_id %}">Reject</a></center></td>
+            </tr>
+            {% endfor %}
+			</table>
+	</body>
+</center>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head>
+
+</head>
+<body style="background-color: #1C1E32">
+	<center>
+    <br>
+		<h1 style="color: darkorange">ORDER STATUS</h1>
+<br>
+		<form>
+			<table border="2" width="600px">
+			<tr>
+                <td><center>USER</center></td>
+                <td><center>SPORTS ITEM</center></td>
+                <td><center>AMOUNT</center></td>
+                <td><center>STATUS</center></td>
+
+
+ <tr>
+                {% for i in o %}
+                    <td><center>{{ i.user.user_name}}</center></td>
+                   <td><center>{{ i.sportsitem_name}}</center></td>
+                    <td><center>{{ i.amount }}</center></td>
+                    <td><center>{{ i.status }}</center></td>
+            </tr>
+            {% endfor %}
+			</table>
+	</body>
+</center>
+</html>
+
+{% endblock %}
+

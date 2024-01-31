@@ -1,0 +1,21 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+</head>
+<body>
+	<center>
+		<h1>NOTIFICATION</h1>
+		<form>
+			<table border="2" width="600px">
+			<tr>
+				<td style="background-color: #1C1E32" align="center">VIEW NOTIFICATION</td>
+            </tr>
+                {% for i in n %}
+              <tr>
+                <td align="center">{{ i.notification}}</td>
+            </tr>
+            {% endfor %}
+			</table>
+	</body>
+</center>
+</html>
+{% endblock %}
